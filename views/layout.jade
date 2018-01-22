@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    block scripts
+      link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    block timeOfDay
+      - var timeOfDay = (new Date()).toDateString()
+      p.mash= 'The Time is: ' + timeOfDay
+
+    block content
+      //  nothing here
+
+    block contactAddress
+      p Address Line 1
+      p Address Line 2
+      p City, ST zip+4
+
+      include footer.jade
