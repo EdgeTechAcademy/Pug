@@ -6,20 +6,21 @@ block content
   p= `Welcome to ${title}`
   p Welcome to #{title}
   p= 'Welcome to #{title}'
-  class ("btn btn-#{btnType} btn-#{btnSize}")
 
   - var btnType = 'info'
   - var btnSize = 'lg'
+  class ("btn btn-#{btnType} btn-#{btnSize}")
+
   = '\n'
-  button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize)
+  button(type='button' class='btn btn-' + btnType + ' btn-' + btnSize) Button 1
   = '\n'
-  button(type='button' class=`btn btn-${btnType} btn-${btnSize}`)
+  button(type='button' class=`btn btn-${btnType} btn-${btnSize}`) Button 2
   = '\n'
-  button(type='button' class="btn btn-#{btnType} btn-#{btnSize}")
+  button(type='button' class="btn btn-#{btnType} btn-#{btnSize}") Button 3
   = '\n'
 
   //  - var title = "On Dogs: Man's Best Friend";
-  - var author = "enlore";
+  - var author = "The Author";
   - var theGreat = "<span>escape!</span>";
 
   p.
@@ -27,15 +28,15 @@ block content
     Suddenly there is a #[strong strongly worded phrase] that cannot be
     #[em ignored].
 
-  div(class='div-class', (click)='play()') hey
-  div(class='div-class' '(click)'='play()') you
+  div(class='div-class', onClick='play()') hey
+  div(class='div-class'  onClick='play()') you
 
   h1= title
   p Written with love by #{author}
   p This will be safe: #{theGreat}
-  - var riskyBusiness = "<em>Some of the girls are wearing my mother's clothing.</em>";
+  - var starWars = "<em>I don't have a good feeling about this</em>";
   .quote
-    p Joel: !{riskyBusiness}
+    p Han: !{starWars}
   ul
     each val, index in {1:'one',2:'two',3:'three'}
       li= index + ': ' + val
@@ -104,11 +105,12 @@ block content
   p Plain text can include <strong>html</strong>
 
   script.
-    function play () {
-        alert('hey')
-    }
     var usingPug = true;
     if (usingPug)
       console.log('you are awesome');
     else
       console.log('use pug');
+
+    function play() {
+        alert('hey')
+    }
