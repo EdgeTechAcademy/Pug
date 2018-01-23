@@ -28,8 +28,8 @@ block content
     Suddenly there is a #[strong strongly worded phrase] that cannot be
     #[em ignored].
 
-  div(class='div-class', onClick='play()') hey
-  div(class='div-class'  onClick='play()') you
+  div(class='div-class', onClick='play()') Hey you!
+  div(class='div-class'  onClick='play()') Click on me
 
   h1= title
   p Written with love by #{author}
@@ -52,6 +52,8 @@ block content
     each val in values.length ? values : ['There are no values']
       li= val
 
+  p now we have values in our array
+  - values = [1, 17, 'Test', 'more tests'];
   ul
     each val in values
       li= val

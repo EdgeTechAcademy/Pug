@@ -2,7 +2,6 @@
 extends layout2.jade
 
 block scripts
-  script(src='/jquery.js')
   script(src='/javascripts/pets.js')
 
 block content
@@ -11,8 +10,9 @@ block content
   each petName in pets
     include pet.jade
 
-  +link('/top', 'top')(class="btn")
-  +link('/top', 'top')
+  +link('/', 'top')(class="btn")
+  p
+  +link('/', 'top')
 
 mixin link(href, name)
   //- attributes == {class: "btn"}
